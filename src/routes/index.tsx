@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ROOMS } from "@/data/rooms";
 import { SITE } from "@/lib/site";
 
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
