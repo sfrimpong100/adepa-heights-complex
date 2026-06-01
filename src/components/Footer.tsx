@@ -1,11 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { SITE } from "@/lib/site";
+import footerBg from "@/assets/views.png";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground mt-24">
-      <div className="container mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
+    <footer className="relative overflow-hidden bg-primary text-primary-foreground mt-24">
+      <img
+        src={footerBg}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-35"
+      />
+
+      <div className="absolute inset-0 bg-primary/70" />
+
+      <div className="relative z-10 container mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <h3 className="font-display text-3xl font-semibold">Adepa Heights Complex</h3>
           <p className="mt-4 max-w-md text-sm text-primary-foreground/75 leading-relaxed">
@@ -42,12 +51,13 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Instagram className="h-4 w-4 text-gold" />
-              <a href="#" className="hover:text-gold transition-smooth">@adepaheights</a>
+              <a href="#" className="hover:text-gold transition-smooth">@adepaheights_complex</a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/15">
+
+      <div className="relative z-10 border-t border-primary-foreground/15">
         <div className="container mx-auto px-6 py-6 text-xs text-primary-foreground/60 text-center">
           © {new Date().getFullYear()} Adepa Heights Complex. All rights reserved.
         </div>

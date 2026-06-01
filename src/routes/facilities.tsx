@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { FacilityCard } from "@/components/FacilityCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Waves, Building, TreePine, Coffee, Car, Mountain } from "lucide-react";
-import pool from "@/assets/pool.jpg";
+import pool from "@/assets/pool.png";
 import event from "@/assets/event.jpg";
 import views from "@/assets/views.jpg";
 

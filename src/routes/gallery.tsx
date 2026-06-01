@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { GalleryGrid, type GalleryItem } from "@/components/GalleryGrid";
-import hero from "@/assets/hero.jpg";
-import pool from "@/assets/pool.jpg";
+import hero from "@/assets/hero.png";
+import pool from "@/assets/pool.png";
 import event from "@/assets/event.jpg";
 import views from "@/assets/views.jpg";
 import standard from "@/assets/room-standard.jpg";

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Building2, Waves, PartyPopper, Mountain, MapPin, Phone } from "lucide-react";
-import hero from "@/assets/hero.jpg";
-import pool from "@/assets/pool.jpg";
+import hero from "@/assets/hero.png";
+import pool from "@/assets/pool.png";
 import views from "@/assets/views.jpg";
 import event from "@/assets/event.jpg";
 import { RoomCard } from "@/components/RoomCard";
