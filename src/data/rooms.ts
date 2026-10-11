@@ -36,7 +36,7 @@ import room1a1_4 from "@/assets/rooms/2-bedroom/1a1/img4.png";
 import room1a1_5 from "@/assets/rooms/2-bedroom/1a1/img5.jpg";
 import room1a1_6 from "@/assets/rooms/2-bedroom/1a1/img6.png";
 import room1a1_7 from "@/assets/rooms/2-bedroom/1a1/img7.png";
-import room1a1_guestbathroom from "@/assets/rooms/2-bedroom/1a1/guestbathroom.png";
+import room1a1_guestbathroom from "@/assets/rooms/2-bedroom/1a1/guestBathroom.png";
 import room1a1_8 from "@/assets/rooms/2-bedroom/1a1/img8.png";
 import room1a1_9 from "@/assets/rooms/2-bedroom/1a1/img9.png";
 import room1a1_10 from "@/assets/rooms/2-bedroom/1a1/img10.jpg";
