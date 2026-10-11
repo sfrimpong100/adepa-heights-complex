@@ -3,7 +3,7 @@ import { Building2, Waves, PartyPopper, Mountain, MapPin, Phone } from "lucide-r
 import hero from "@/assets/hero.png";
 import pool from "@/assets/pool.png";
 import views from "@/assets/views.png";
-import event from "@/assets/event.png";
+import event from "@/assets/img10.jpg";
 import { RoomCard } from "@/components/RoomCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ROOMS } from "@/data/rooms";
@@ -131,7 +131,7 @@ function Index() {
         <div className="relative container mx-auto px-6 text-center text-primary-foreground">
           <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">Celebrate With Us</span>
           <h2 className="mt-3 font-display text-4xl md:text-5xl">
-            Weddings, retreats & private gatherings
+            Weddings, Birthdays, Retreats & Private gatherings
           </h2>
           <p className="mt-5 max-w-xl mx-auto text-primary-foreground/85">
             Our indoor hall and lawn space host the most memorable evenings —
