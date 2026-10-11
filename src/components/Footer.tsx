@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { SITE } from "@/lib/site";
-import footerBg from "@/assets/views.png";
+import footerBg from "@/assets/footerviews.png";
 
 export function Footer() {
   return (

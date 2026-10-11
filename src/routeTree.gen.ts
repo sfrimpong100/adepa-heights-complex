@@ -17,6 +17,8 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RoomsCategoryIndexRouteImport } from './routes/rooms/$category/index'
+import { Route as RoomsCategoryUnitRouteImport } from './routes/rooms/$category/$unit'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -58,6 +60,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RoomsCategoryIndexRoute = RoomsCategoryIndexRouteImport.update({
+  id: '/$category/',
+  path: '/$category/',
+  getParentRoute: () => RoomsRoute,
+} as any)
+const RoomsCategoryUnitRoute = RoomsCategoryUnitRouteImport.update({
+  id: '/$category/$unit',
+  path: '/$category/$unit',
+  getParentRoute: () => RoomsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -66,8 +78,10 @@ export interface FileRoutesByFullPath {
   '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
-  '/rooms': typeof RoomsRoute
+  '/rooms': typeof RoomsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/rooms/$category/$unit': typeof RoomsCategoryUnitRoute
+  '/rooms/$category/': typeof RoomsCategoryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -76,8 +90,10 @@ export interface FileRoutesByTo {
   '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
-  '/rooms': typeof RoomsRoute
+  '/rooms': typeof RoomsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/rooms/$category/$unit': typeof RoomsCategoryUnitRoute
+  '/rooms/$category': typeof RoomsCategoryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -87,8 +103,10 @@ export interface FileRoutesById {
   '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
-  '/rooms': typeof RoomsRoute
+  '/rooms': typeof RoomsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/rooms/$category/$unit': typeof RoomsCategoryUnitRoute
+  '/rooms/$category/': typeof RoomsCategoryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +119,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/rooms'
     | '/sitemap.xml'
+    | '/rooms/$category/$unit'
+    | '/rooms/$category/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +131,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/rooms'
     | '/sitemap.xml'
+    | '/rooms/$category/$unit'
+    | '/rooms/$category'
   id:
     | '__root__'
     | '/'
@@ -121,6 +143,8 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/rooms'
     | '/sitemap.xml'
+    | '/rooms/$category/$unit'
+    | '/rooms/$category/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -130,7 +154,7 @@ export interface RootRouteChildren {
   EventsRoute: typeof EventsRoute
   FacilitiesRoute: typeof FacilitiesRoute
   GalleryRoute: typeof GalleryRoute
-  RoomsRoute: typeof RoomsRoute
+  RoomsRoute: typeof RoomsRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -192,8 +216,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rooms/$category/': {
+      id: '/rooms/$category/'
+      path: '/$category'
+      fullPath: '/rooms/$category/'
+      preLoaderRoute: typeof RoomsCategoryIndexRouteImport
+      parentRoute: typeof RoomsRoute
+    }
+    '/rooms/$category/$unit': {
+      id: '/rooms/$category/$unit'
+      path: '/$category/$unit'
+      fullPath: '/rooms/$category/$unit'
+      preLoaderRoute: typeof RoomsCategoryUnitRouteImport
+      parentRoute: typeof RoomsRoute
+    }
   }
 }
+
+interface RoomsRouteChildren {
+  RoomsCategoryUnitRoute: typeof RoomsCategoryUnitRoute
+  RoomsCategoryIndexRoute: typeof RoomsCategoryIndexRoute
+}
+
+const RoomsRouteChildren: RoomsRouteChildren = {
+  RoomsCategoryUnitRoute: RoomsCategoryUnitRoute,
+  RoomsCategoryIndexRoute: RoomsCategoryIndexRoute,
+}
+
+const RoomsRouteWithChildren = RoomsRoute._addFileChildren(RoomsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -202,7 +252,7 @@ const rootRouteChildren: RootRouteChildren = {
   EventsRoute: EventsRoute,
   FacilitiesRoute: FacilitiesRoute,
   GalleryRoute: GalleryRoute,
-  RoomsRoute: RoomsRoute,
+  RoomsRoute: RoomsRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

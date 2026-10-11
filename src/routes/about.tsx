@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
-import views from "@/assets/views.jpg";
-import hero from "@/assets/hero.png";
+import views from "@/assets/views.png";
+import img2 from "@/assets/img2.png";
 import { Leaf, Heart, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -52,7 +52,7 @@ function AboutPage() {
           </div>
         </div>
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant">
-          <img src={hero} alt="Adepa Heights Complex" loading="lazy" className="h-full w-full object-cover" />
+          <img src={img2} alt="Adepa Heights Complex" loading="lazy" className="h-full w-full object-cover" />
         </div>
       </section>
 
