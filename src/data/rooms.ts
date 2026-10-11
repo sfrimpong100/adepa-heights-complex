@@ -10,10 +10,10 @@ import room1c1_3 from "@/assets/rooms/executive/1c1/img3.png";
 import room1c1_bathroom from "@/assets/rooms/executive/1c1/bathroom.png";
 
 // 1C2 real images
-import room1c2_1 from "@/assets/rooms/standard/1c2/img1.png";
-import room1c2_2 from "@/assets/rooms/standard/1c2/img2.png";
-import room1c2_3 from "@/assets/rooms/standard/1c2/img3.png";
-import room1c2_bathroom from "@/assets/rooms/standard/1c2/bathroom.png";
+import room1c2_1 from "@/assets/rooms/Standard/1c2/img1.png";
+import room1c2_2 from "@/assets/rooms/Standard/1c2/img2.png";
+import room1c2_3 from "@/assets/rooms/Standard/1c2/img3.png";
+import room1c2_bathroom from "@/assets/rooms/Standard/1c2/bathroom.png";
 
 // 1C4 real images
 import room1c4_1 from "@/assets/rooms/executive/1c4/img1.png";
@@ -23,10 +23,10 @@ import room1c4_4 from "@/assets/rooms/executive/1c4/img4.png";
 import room1c4_bathroom from "@/assets/rooms/executive/1c4/bathroom.png";
 
 // 1C3 real images
-import room1c3_1 from "@/assets/rooms/standard/1c3/img1.png";
-import room1c3_2 from "@/assets/rooms/standard/1c3/img2.png";
-import room1c3_3 from "@/assets/rooms/standard/1c3/img3.png";
-import room1c3_bathroom from "@/assets/rooms/standard/1c3/bathroom.png";
+import room1c3_1 from "@/assets/rooms/Standard/1c3/img1.png";
+import room1c3_2 from "@/assets/rooms/Standard/1c3/img2.png";
+import room1c3_3 from "@/assets/rooms/Standard/1c3/img3.png";
+import room1c3_bathroom from "@/assets/rooms/Standard/1c3/bathroom.png";
 
 // 1A1 real images
 import room1a1_1 from "@/assets/rooms/2-bedroom/1a1/img1.png";
